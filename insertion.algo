@@ -1,0 +1,29 @@
+PROCEDURE tri_insertion(tab:ARRAY_OF INTEGER)
+VAR
+elt,i,j:INTEGER;
+BEGIN
+  FOR i FROM 1 TO tab.length-1 DO
+      elt:=tab[i];
+      j=i;
+      WHILE (j>0 && tab[j-1]>elt) DO
+          tab[j]:=tab[j-1];
+          j:=j-1;
+      END_WHILE
+      tab[j]:=elt;
+  END_FOR
+END
+ALGORITHM trier_tableau
+VAR
+    v:ARRAY_OF INTEGER[10];
+    i:INTEGER;
+BEGIN
+    tab:={22,18,15,12,10,8,6,5,2,1};
+    Write("le tableau avant le tri");
+    FOR i FROM 0 TO 9  DO
+        Write("\n",tab[i]);
+    END_FOR
+    Write("le tableau apres le tri ");
+    FOR i FROM 0 TO 9  DO
+        Write("\n",tab[i]);
+    END_FOR
+END
